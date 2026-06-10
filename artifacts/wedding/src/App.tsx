@@ -26,6 +26,18 @@ function App() {
     a.play().catch(() => {});
   }, []);
 
+  /* Try to autoplay immediately; fall back to first interaction */
+  useEffect(() => {
+    const a = audioRef.current;
+    if (!a) return;
+    a.volume = 0.32;
+    a.play().catch(() => {
+      const unlock = () => { a.play().catch(() => {}); };
+      document.addEventListener("click",      unlock, { once: true });
+      document.addEventListener("touchstart", unlock, { once: true });
+    });
+  }, []);
+
   useEffect(() => {
     const t = setTimeout(() => setIsRevealed(true), 8500);
     return () => clearTimeout(t);

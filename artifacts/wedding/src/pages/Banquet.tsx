@@ -10,12 +10,12 @@ const SCHEDULE = [
 ];
 
 const GALLERY = [
-  "https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=700&q=82",
+  "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=700&q=82",
   "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=700&q=82",
+  "https://images.unsplash.com/photo-1583391099995-5b40bff7f2d2?w=700&q=82",
+  "https://images.unsplash.com/photo-1519741347686-c1e0aadf4611?w=700&q=82",
+  "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=700&q=82",
   "https://images.unsplash.com/photo-1606800052052-a08af7148866?w=700&q=82",
-  "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=700&q=82",
-  "https://images.unsplash.com/photo-1478145046317-39f10e56b5e9?w=700&q=82",
-  "https://images.unsplash.com/photo-1550005809-91ad75fb315f?w=700&q=82",
 ];
 
 function Divider({ icon="❧", wide=false }: { icon?:string; wide?:boolean }) {

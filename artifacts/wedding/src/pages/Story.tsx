@@ -6,19 +6,19 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 const TIMELINE = [
   { year:"2020", np:"पहिलो भेट",    en:"First Meeting",     icon:"✨",
     desc:"Two souls crossed paths at a family gathering in Kathmandu — a fleeting glance that neither could forget. The world grew a little more beautiful that day.",
-    img:"https://images.unsplash.com/photo-1529636444744-adffc9135a5e?w=800&q=82" },
+    img:"https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=800&q=82" },
   { year:"2021", np:"मित्रता",       en:"Friendship Blooms", icon:"🌸",
     desc:"Late-night calls, shared dreams, and long walks through Patan Durbar Square turned strangers into the best of friends. Every moment felt like home.",
     img:"https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=800&q=82" },
   { year:"2023", np:"प्रेम",         en:"Love Declared",     icon:"❤",
     desc:"Under a canopy of marigolds at Pashupatinath, Aashish took Aayushi's hands and said what his heart had known all along. She said yes with tears of joy.",
-    img:"https://images.unsplash.com/photo-1583391099995-5b40bff7f2d2?w=800&q=82" },
+    img:"https://images.unsplash.com/photo-1606800052052-a08af7148866?w=800&q=82" },
   { year:"2025", np:"सगाई",          en:"Engagement",        icon:"💍",
     desc:"Surrounded by both families, rings were exchanged and a lifelong promise was made — to journey through life together, always.",
-    img:"https://images.unsplash.com/photo-1519741347686-c1e0aadf4611?w=800&q=82" },
+    img:"https://images.unsplash.com/photo-1583391099995-5b40bff7f2d2?w=800&q=82" },
   { year:"Dec 2026", np:"शुभ विवाह", en:"Wedding Day",       icon:"🪔",
     desc:"On the auspicious twelfth of December, they take their seven sacred vows — Saptapadi — and begin their forever in the presence of God and loved ones.",
-    img:"https://images.unsplash.com/photo-1606800052052-a08af7148866?w=800&q=82" },
+    img:"https://images.unsplash.com/photo-1519741347686-c1e0aadf4611?w=800&q=82" },
 ];
 
 const MILESTONES = [
@@ -30,14 +30,14 @@ const MILESTONES = [
 ];
 
 const PHOTOS_GROOM = [
-  "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=82",
-  "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600&q=82",
-  "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=600&q=82",
+  "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=600&q=82",
+  "https://images.unsplash.com/photo-1519741347686-c1e0aadf4611?w=600&q=82",
+  "https://images.unsplash.com/photo-1606800052052-a08af7148866?w=600&q=82",
 ];
 const PHOTOS_BRIDE = [
-  "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=600&q=82",
-  "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=600&q=82",
-  "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=600&q=82",
+  "https://images.unsplash.com/photo-1583391099995-5b40bff7f2d2?w=600&q=82",
+  "https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=600&q=82",
+  "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=600&q=82",
 ];
 
 /* ── helpers ────────────────────────────────────── */
@@ -73,7 +73,7 @@ export default function Story() {
       {/* Fixed warm background */}
       <div className="fixed inset-0 -z-10" style={{ background:"#5B0F14" }}/>
       <div className="fixed inset-0 -z-10" style={{
-        backgroundImage:"url('https://images.unsplash.com/photo-1583391099995-5b40bff7f2d2?w=1600&q=40')",
+        backgroundImage:"url('https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=1600&q=40')",
         backgroundSize:"cover", backgroundPosition:"center",
         filter:"blur(28px) brightness(0.28) saturate(1.5)",
         transform:"scale(1.08)",

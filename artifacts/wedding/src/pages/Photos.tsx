@@ -7,16 +7,16 @@ const STORAGE_KEY_GROOM = "wedding_photos_groom";
 const STORAGE_KEY_BRIDE  = "wedding_photos_bride";
 
 const DEFAULT_GROOM: Photo[] = [
-  { id:"g1", url:"https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=82", caption:"Aashish" },
-  { id:"g2", url:"https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600&q=82", caption:"Pre-wedding" },
-  { id:"g3", url:"https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=600&q=82", caption:"Celebration" },
-  { id:"g4", url:"https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=600&q=82", caption:"Portrait" },
+  { id:"g1", url:"https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=600&q=82", caption:"Aashish" },
+  { id:"g2", url:"https://images.unsplash.com/photo-1519741347686-c1e0aadf4611?w=600&q=82", caption:"Ceremony" },
+  { id:"g3", url:"https://images.unsplash.com/photo-1606800052052-a08af7148866?w=600&q=82", caption:"Wedding day" },
+  { id:"g4", url:"https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=600&q=82", caption:"Celebration" },
 ];
 const DEFAULT_BRIDE: Photo[] = [
-  { id:"b1", url:"https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=600&q=82", caption:"Aayushi" },
-  { id:"b2", url:"https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=600&q=82", caption:"Bridal look" },
-  { id:"b3", url:"https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=600&q=82", caption:"Haldi ceremony" },
-  { id:"b4", url:"https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=600&q=82", caption:"Mehndi" },
+  { id:"b1", url:"https://images.unsplash.com/photo-1583391099995-5b40bff7f2d2?w=600&q=82", caption:"Aayushi" },
+  { id:"b2", url:"https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=600&q=82", caption:"Bridal flowers" },
+  { id:"b3", url:"https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=600&q=82", caption:"Mehndi" },
+  { id:"b4", url:"https://images.unsplash.com/photo-1550005809-91ad75fb315f?w=600&q=82", caption:"Reception" },
 ];
 
 function usePhotoStore(key:string, defaults:Photo[]) {

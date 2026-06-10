@@ -12,8 +12,8 @@ const MILESTONES = [
   { year: "Dec 2026", np: "शुभ विवाह", en: "Wedding Day",   icon: "🪔", col: "from-yellow-900/28" },
 ];
 const CHAPTERS = [
-  { href:"/story",   np:"हाम्रो कहानी",     en:"Our Story",  sub:"From first glance to forever",     img:"https://images.unsplash.com/photo-1529636444744-adffc9135a5e?w=900&q=80", icon:"✨" },
-  { href:"/photos",  np:"हाम्रा तस्बिरहरू", en:"Our Photos", sub:"Moments captured in gold",          img:"https://images.unsplash.com/photo-1519741347686-c1e0aadf4611?w=900&q=80", icon:"📸" },
+  { href:"/story",   np:"हाम्रो कहानी",     en:"Our Story",  sub:"From first glance to forever",     img:"https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=900&q=80", icon:"✨" },
+  { href:"/photos",  np:"हाम्रा तस्बिरहरू", en:"Our Photos", sub:"Moments captured in gold",          img:"https://images.unsplash.com/photo-1583391099995-5b40bff7f2d2?w=900&q=80", icon:"📸" },
   { href:"/banquet", np:"समारोह स्थल",       en:"The Venue",  sub:"Himalaya Grand Banquet",           img:"https://images.unsplash.com/photo-1505236858219-8359eb29e329?w=900&q=80", icon:"🏛" },
 ];
 const SCHEDULE = [
@@ -88,18 +88,18 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* ════════════════════════════════════════════════
-          BLOCK 1 — HERO
-      ════════════════════════════════════════════════ */}
-      <section className="relative min-h-screen flex flex-col items-center justify-center text-center px-5 pt-24 pb-16 overflow-hidden"
+      {/* ══════════════════════════════════════════════════
+          HERO — exactly h-screen so the ring center =
+          viewport center = couple image center always
+      ══════════════════════════════════════════════════ */}
+      <section className="relative h-screen overflow-hidden text-center"
         style={{ background:"radial-gradient(ellipse 120% 75% at 50% 30%, #8a1c24 0%, #5B0F14 52%, #3d0b10 100%)" }}>
 
-        {/* Large spinning Ganesh mandala — same as GaneshReveal */}
+        {/* Spinning mandala rings */}
         <GaneshMandala opacity={0.09} size="148vmin" speed="cw-slow"/>
-        {/* Inner counter-spin layer for depth */}
         <GaneshMandala opacity={0.05} size="75vmin" speed="ccw-medium"/>
 
-        {/* Radial vignette so mandala fades at edges */}
+        {/* Radial vignette */}
         <div className="absolute inset-0 pointer-events-none" style={{
           background:"radial-gradient(ellipse 70% 65% at 50% 48%, transparent 0%, rgba(30,5,8,0.70) 100%)"
         }}/>
@@ -108,96 +108,84 @@ export default function Home() {
         <div className="absolute inset-6 sm:inset-10 pointer-events-none">
           {["top-0 left-0 border-t border-l","top-0 right-0 border-t border-r","bottom-0 left-0 border-b border-l","bottom-0 right-0 border-b border-r"]
             .map((p,i)=><div key={i} className={`absolute w-12 h-12 sm:w-16 sm:h-16 ${p} border-[#D4AF37]/38`}/>)}
-          {["top-0 left-0","top-0 right-0","bottom-0 left-0","bottom-0 right-0"].map((p,i)=>(
-            <div key={`d${i}`} className={`absolute w-2 h-2 bg-[#D4AF37]/48 rotate-45 ${p} ${
-              i===0?"translate-x-0 translate-y-0":i===1?"translate-x-0 translate-y-0":
-              i===2?"translate-x-0 translate-y-0":"translate-x-0 translate-y-0"}`}/>
-          ))}
-          {/* Mid-side ticks */}
           <div className="absolute top-1/2 left-0 -translate-y-1/2 w-4 h-px bg-[#D4AF37]/25"/>
           <div className="absolute top-1/2 right-0 -translate-y-1/2 w-4 h-px bg-[#D4AF37]/25"/>
         </div>
 
-        <div className="w-full max-w-3xl mx-auto flex flex-col items-center gap-5 md:gap-7 hero-stagger relative z-10">
+        {/* ── Shubha Vivah couple — absolute center of the viewport (= center of spinning ring) ── */}
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none" style={{zIndex:8}}>
+          <img
+            src="/shubha-vivah-couple.png"
+            alt="Shubha Vivah"
+            style={{
+              width:"min(48vmin,300px)",
+              filter:"drop-shadow(0 0 60px rgba(212,175,55,0.52)) drop-shadow(0 6px 36px rgba(0,0,0,0.58))",
+            }}
+          />
+        </div>
 
-          {/* Ganesh + mantra */}
-          <div className="flex flex-col items-center gap-3 hero-item">
-            <img src="/ganesh.png" alt="Lord Ganesh" className="w-16 h-16 md:w-[88px] md:h-[88px] animate-shimmer animate-float"/>
+        {/* Top content — Ganesh + mantra — pushed to upper 1/3 */}
+        <div className="absolute inset-x-0 top-0 flex flex-col items-center gap-3 px-5 pt-20 z-10 hero-stagger">
+          <div className="flex flex-col items-center gap-2 hero-item">
+            <img src="/ganesh.png" alt="Lord Ganesh" className="w-14 h-14 md:w-20 md:h-20 animate-shimmer animate-float"/>
             <p className="font-yatra text-gold-gradient text-sm md:text-base tracking-widest">ॐ श्री गणेशाय नमः</p>
-            <p className="font-sans text-[#D4AF37]/68 text-sm md:text-base italic leading-loose max-w-sm">
+            <p className="font-sans text-[#D4AF37]/62 text-sm italic max-w-xs leading-relaxed">
               वक्रतुंड महाकाय सूर्यकोटि समप्रभ। निर्विघ्नं कुरु मे देव।
             </p>
           </div>
+          <div className="hero-item w-full max-w-[180px]"><Divider/></div>
+        </div>
 
-          <div className="hero-item w-full max-w-xs"><Divider/></div>
-
-          {/* Couple illustration — centered inside its own spinning ring frame */}
-          <div className="hero-item relative flex items-center justify-center"
-            style={{width:"min(78vmin,380px)", height:"min(78vmin,380px)"}}>
-            {/* Outer mandala ring — slow CW */}
-            <img src="/mandala-ring.png" aria-hidden alt=""
-              className="absolute inset-0 w-full h-full mandala-cw-slow pointer-events-none select-none"
-              style={{mixBlendMode:"screen", opacity:0.42, filter:"brightness(0.9) saturate(1.3) drop-shadow(0 0 14px rgba(212,175,55,0.35))"}}/>
-            {/* Inner mandala ring wrapper — positioned at center, rotation on the img */}
-            <div className="absolute pointer-events-none"
-              style={{width:"75%",height:"75%",top:"50%",left:"50%",transform:"translate(-50%,-50%)"}}>
-              <img src="/mandala-ring.png" aria-hidden alt=""
-                className="w-full h-full mandala-ccw-medium select-none"
-                style={{mixBlendMode:"screen", opacity:0.28, filter:"brightness(0.85) saturate(1.2)"}}/>
-            </div>
-            {/* Soft gold glow bloom behind the couple */}
-            <div className="absolute rounded-full pointer-events-none"
-              style={{width:"52%",height:"52%",top:"50%",left:"50%",transform:"translate(-50%,-50%)",background:"radial-gradient(circle, rgba(212,175,55,0.30) 0%, transparent 75%)",filter:"blur(12px)"}}/>
-            {/* The couple image — centered */}
-            <img src="/shubha-vivah-couple.png" alt="Shubha Vivah"
-              className="relative z-10 shrink-0"
-              style={{width:"58%", filter:"drop-shadow(0 0 40px rgba(212,175,55,0.55)) drop-shadow(0 4px 24px rgba(0,0,0,0.60))"}}/>
-          </div>
-
-          {/* Names — split across lines with heart between, no overflow */}
-          <div className="text-center hero-item space-y-1 md:space-y-2">
+        {/* Bottom content — names + date + scroll — pushed to lower 1/3 */}
+        <div className="absolute inset-x-0 bottom-0 flex flex-col items-center gap-2 px-5 pb-10 z-10 hero-stagger">
+          <div className="text-center hero-item space-y-1">
             <h1 className="font-yatra text-gold-gradient leading-none tracking-wide"
-              style={{fontSize:"clamp(2.6rem, 9vw, 5.8rem)"}}>
+              style={{fontSize:"clamp(2.4rem, 8vw, 5.2rem)"}}>
               आशीष
             </h1>
             <div className="flex items-center justify-center gap-3">
-              <div className="w-12 sm:w-20 h-px bg-gradient-to-r from-transparent to-[#C0203A]/60"/>
-              <span style={{fontSize:"clamp(1.4rem, 5vw, 2.6rem)", lineHeight:1, filter:"drop-shadow(0 0 8px rgba(192,32,58,0.70))"}}>❤</span>
-              <div className="w-12 sm:w-20 h-px bg-gradient-to-l from-transparent to-[#C0203A]/60"/>
+              <div className="w-10 sm:w-16 h-px bg-gradient-to-r from-transparent to-[#C0203A]/55"/>
+              <span style={{fontSize:"clamp(1.3rem, 4.5vw, 2.2rem)", lineHeight:1, filter:"drop-shadow(0 0 8px rgba(192,32,58,0.80))"}}>❤</span>
+              <div className="w-10 sm:w-16 h-px bg-gradient-to-l from-transparent to-[#C0203A]/55"/>
             </div>
             <h1 className="font-yatra text-gold-gradient leading-none tracking-wide"
-              style={{fontSize:"clamp(2.6rem, 9vw, 5.8rem)"}}>
+              style={{fontSize:"clamp(2.4rem, 8vw, 5.2rem)"}}>
               आयुषी
             </h1>
-            <p className="font-cinzel text-[#D4AF37]/70 tracking-[0.42em] uppercase text-[10px] md:text-xs pt-1">Aashish &amp; Aayushi</p>
-            <p className="font-cinzel text-[#D4AF37]/48 tracking-[0.3em] text-[9px] md:text-[10px]">December 12, 2026 · Kathmandu, Nepal</p>
           </div>
-
-          <div className="hero-item w-full max-w-xs"><Divider icon="✦"/></div>
-
-          {/* Invitation */}
-          <div className="space-y-3 max-w-xl mx-auto hero-item">
-            <p className="font-sans text-[#FDFBF7]/85 text-sm md:text-[1.05rem] leading-relaxed">
-              सुपुत्र: <span className="text-[#D4AF37]/92 font-medium">श्री राम प्रसाद शर्मा</span> तथा{" "}
-              <span className="text-[#D4AF37]/92 font-medium">श्रीमती सीता शर्मा</span>
-            </p>
-            <p className="font-cinzel text-[#D4AF37]/40 text-[9px] tracking-[0.3em]">— र —</p>
-            <p className="font-sans text-[#FDFBF7]/85 text-sm md:text-[1.05rem] leading-relaxed">
-              सुपुत्री: <span className="text-[#D4AF37]/92 font-medium">श्री हरि बहादुर थापा</span> तथा{" "}
-              <span className="text-[#D4AF37]/92 font-medium">श्रीमती गीता थापा</span>
-            </p>
-            <p className="font-yatra text-gold-gradient text-sm md:text-base pt-2 leading-loose max-w-md mx-auto">
-              हाम्रो शुभ विवाहको पावन अवसरमा यहाँको गरिमामय उपस्थितिको लागि हार्दिक निमन्त्रणा।
-            </p>
-          </div>
-
-          {/* Scroll hint */}
-          <div className="flex flex-col items-center gap-3 opacity-50 pt-1 hero-item">
-            <p className="font-cinzel text-[#D4AF37] text-[8px] tracking-[0.58em] uppercase">Scroll to explore</p>
-            <div className="w-5 h-9 rounded-full border border-[#D4AF37]/42 flex items-start justify-center pt-2">
+          <p className="font-cinzel text-[#D4AF37]/68 tracking-[0.38em] uppercase text-[9px] md:text-[10px] hero-item">Aashish &amp; Aayushi</p>
+          <p className="font-cinzel text-[#D4AF37]/45 tracking-[0.28em] text-[8px] md:text-[9px] hero-item">December 12, 2026 · Kathmandu, Nepal</p>
+          <div className="flex flex-col items-center gap-2 opacity-50 pt-1 hero-item">
+            <p className="font-cinzel text-[#D4AF37] text-[8px] tracking-[0.55em] uppercase">Scroll to explore</p>
+            <div className="w-5 h-8 rounded-full border border-[#D4AF37]/42 flex items-start justify-center pt-1.5">
               <div className="w-1 h-1.5 rounded-full bg-[#D4AF37]/80 animate-scroll-dot"/>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ── Invitation text — just below the hero ── */}
+      <section className="relative py-14 md:py-20 px-5 text-center overflow-hidden"
+        style={{ background:"radial-gradient(ellipse 110% 80% at 50% 50%, #6e151c 0%, #5B0F14 55%, #3d0b10 100%)" }}>
+        <GaneshMandala opacity={0.07} size="130vmin" speed="ccw-medium"/>
+        <div className="absolute inset-0 pointer-events-none" style={{
+          background:"radial-gradient(ellipse 70% 65% at 50% 50%, transparent 0%, rgba(25,5,8,0.62) 100%)"
+        }}/>
+        <div className="relative z-10 max-w-xl mx-auto space-y-4">
+          <Divider icon="✦" wide/>
+          <p className="font-sans text-[#FDFBF7]/85 text-sm md:text-[1.05rem] leading-relaxed">
+            सुपुत्र: <span className="text-[#D4AF37]/92 font-medium">श्री राम प्रसाद शर्मा</span> तथा{" "}
+            <span className="text-[#D4AF37]/92 font-medium">श्रीमती सीता शर्मा</span>
+          </p>
+          <p className="font-cinzel text-[#D4AF37]/40 text-[9px] tracking-[0.3em]">— र —</p>
+          <p className="font-sans text-[#FDFBF7]/85 text-sm md:text-[1.05rem] leading-relaxed">
+            सुपुत्री: <span className="text-[#D4AF37]/92 font-medium">श्री हरि बहादुर थापा</span> तथा{" "}
+            <span className="text-[#D4AF37]/92 font-medium">श्रीमती गीता थापा</span>
+          </p>
+          <p className="font-yatra text-gold-gradient text-sm md:text-base pt-1 leading-loose max-w-md mx-auto">
+            हाम्रो शुभ विवाहको पावन अवसरमा यहाँको गरिमामय उपस्थितिको लागि हार्दिक निमन्त्रणा।
+          </p>
+          <Divider icon="✦" wide/>
         </div>
       </section>
 
