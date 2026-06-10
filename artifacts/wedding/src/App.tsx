@@ -6,6 +6,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { GoldenPetals } from "@/components/GoldenPetals";
 import { SpinningMandala } from "@/components/SpinningMandala";
 import { GaneshReveal } from "@/components/GaneshReveal";
+import { MandalaRingOverlay } from "@/components/MandalaRingOverlay";
 import { MusicPlayer } from "@/components/MusicPlayer";
 import Home from "@/pages/Home";
 import Story from "@/pages/Story";
@@ -37,6 +38,7 @@ function App() {
         <GoldenPetals />
         <SpinningMandala intensity={1} />
         <GaneshReveal isRevealed={isRevealed} onPlay={handlePlay} />
+        {isRevealed && <MandalaRingOverlay />}
         {isRevealed && (
           <div className="relative z-20 animate-in fade-in duration-1000">
             <Router>

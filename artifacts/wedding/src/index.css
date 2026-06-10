@@ -64,6 +64,18 @@
   * { letter-spacing: 0.01em; }
 }
 
+/* ── Smooth page transitions ────── */
+* { -webkit-font-smoothing: antialiased; }
+
+/* GPU-accelerate all spinning elements */
+[style*="rotate"], [class*="mandala"] {
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+/* Smooth links & interactive elements */
+a, button { transition: opacity 0.2s ease, color 0.2s ease; }
+
 /* ── Gold gradient text ─────────── */
 .text-gold-gradient {
   background: linear-gradient(135deg, #C9942A 0%, #F5E6A0 28%, #D4AF37 52%, #FBF5B7 72%, #B8821E 100%);
