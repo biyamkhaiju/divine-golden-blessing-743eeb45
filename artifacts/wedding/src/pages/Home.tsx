@@ -131,20 +131,45 @@ export default function Home() {
 
           <div className="hero-item w-full max-w-xs"><Divider/></div>
 
-          {/* Couple illustration */}
-          <div className="hero-item">
+          {/* Couple illustration — centered inside its own spinning ring frame */}
+          <div className="hero-item relative flex items-center justify-center"
+            style={{width:"min(78vmin,380px)", height:"min(78vmin,380px)"}}>
+            {/* Outer mandala ring — slow CW */}
+            <img src="/mandala-ring.png" aria-hidden alt=""
+              className="absolute inset-0 w-full h-full mandala-cw-slow pointer-events-none select-none"
+              style={{mixBlendMode:"screen", opacity:0.42, filter:"brightness(0.9) saturate(1.3) drop-shadow(0 0 14px rgba(212,175,55,0.35))"}}/>
+            {/* Inner mandala ring wrapper — positioned at center, rotation on the img */}
+            <div className="absolute pointer-events-none"
+              style={{width:"75%",height:"75%",top:"50%",left:"50%",transform:"translate(-50%,-50%)"}}>
+              <img src="/mandala-ring.png" aria-hidden alt=""
+                className="w-full h-full mandala-ccw-medium select-none"
+                style={{mixBlendMode:"screen", opacity:0.28, filter:"brightness(0.85) saturate(1.2)"}}/>
+            </div>
+            {/* Soft gold glow bloom behind the couple */}
+            <div className="absolute rounded-full pointer-events-none"
+              style={{width:"52%",height:"52%",top:"50%",left:"50%",transform:"translate(-50%,-50%)",background:"radial-gradient(circle, rgba(212,175,55,0.30) 0%, transparent 75%)",filter:"blur(12px)"}}/>
+            {/* The couple image — centered */}
             <img src="/shubha-vivah-couple.png" alt="Shubha Vivah"
-              className="w-full max-w-[190px] sm:max-w-[260px] md:max-w-sm mx-auto"
-              style={{filter:"drop-shadow(0 0 60px rgba(212,175,55,0.50)) drop-shadow(0 6px 36px rgba(0,0,0,0.55))"}}/>
+              className="relative z-10 shrink-0"
+              style={{width:"58%", filter:"drop-shadow(0 0 40px rgba(212,175,55,0.55)) drop-shadow(0 4px 24px rgba(0,0,0,0.60))"}}/>
           </div>
 
-          {/* Names */}
-          <div className="space-y-2 md:space-y-3 hero-item">
+          {/* Names — split across lines with heart between, no overflow */}
+          <div className="text-center hero-item space-y-1 md:space-y-2">
             <h1 className="font-yatra text-gold-gradient leading-none tracking-wide"
-              style={{fontSize:"clamp(3rem, 10vw, 6.5rem)"}}>
-              आशीष <span className="inline-block" style={{fontSize:"0.48em",opacity:0.65,verticalAlign:"middle"}}>❤</span> आयुषी
+              style={{fontSize:"clamp(2.6rem, 9vw, 5.8rem)"}}>
+              आशीष
             </h1>
-            <p className="font-cinzel text-[#D4AF37]/70 tracking-[0.42em] uppercase text-[10px] md:text-xs">Aashish &amp; Aayushi</p>
+            <div className="flex items-center justify-center gap-3">
+              <div className="w-12 sm:w-20 h-px bg-gradient-to-r from-transparent to-[#C0203A]/60"/>
+              <span style={{fontSize:"clamp(1.4rem, 5vw, 2.6rem)", lineHeight:1, filter:"drop-shadow(0 0 8px rgba(192,32,58,0.70))"}}>❤</span>
+              <div className="w-12 sm:w-20 h-px bg-gradient-to-l from-transparent to-[#C0203A]/60"/>
+            </div>
+            <h1 className="font-yatra text-gold-gradient leading-none tracking-wide"
+              style={{fontSize:"clamp(2.6rem, 9vw, 5.8rem)"}}>
+              आयुषी
+            </h1>
+            <p className="font-cinzel text-[#D4AF37]/70 tracking-[0.42em] uppercase text-[10px] md:text-xs pt-1">Aashish &amp; Aayushi</p>
             <p className="font-cinzel text-[#D4AF37]/48 tracking-[0.3em] text-[9px] md:text-[10px]">December 12, 2026 · Kathmandu, Nepal</p>
           </div>
 
