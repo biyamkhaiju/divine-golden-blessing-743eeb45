@@ -38,9 +38,13 @@ function Divider({ icon="❧", wide=false }: { icon?:string; wide?:boolean }) {
 function GaneshMandala({ opacity=0.08, size="140vmin", speed="cw-slow" }: { opacity?:number; size?:string; speed?:string }) {
   return (
     <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden select-none" aria-hidden>
-      <img src="/ganesh.png" alt=""
+      <img src="/mandala-ring.png" alt=""
         className={`mandala-${speed} shrink-0`}
-        style={{ width:size, maxWidth:"none", opacity, filter:"sepia(1) saturate(14) hue-rotate(-22deg) brightness(1.15)" }}/>
+        style={{
+          width:size, maxWidth:"none", opacity,
+          mixBlendMode:"screen",
+          filter:`brightness(1.35) saturate(1.6) drop-shadow(0 0 ${Math.round(opacity*400)}px rgba(212,175,55,0.85)) drop-shadow(0 0 ${Math.round(opacity*200)}px rgba(255,210,80,0.55))`
+        }}/>
     </div>
   );
 }
