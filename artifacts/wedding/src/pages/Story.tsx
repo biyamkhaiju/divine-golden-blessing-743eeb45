@@ -57,9 +57,9 @@ function GaneshMandala({ opacity=0.08, size="140vmin", speed="cw-slow" }: { opac
       <img src="/mandala-ring.png" alt=""
         className={`mandala-${speed} shrink-0`}
         style={{
-          width:size, maxWidth:"none", opacity,
+          width:size, maxWidth:"none", opacity: opacity * 0.55,
           mixBlendMode:"screen",
-          filter:`brightness(1.35) saturate(1.6) drop-shadow(0 0 ${Math.round(opacity*400)}px rgba(212,175,55,0.85)) drop-shadow(0 0 ${Math.round(opacity*200)}px rgba(255,210,80,0.55))`
+          filter:"brightness(0.9) saturate(1.3) drop-shadow(0 0 10px rgba(212,175,55,0.3))"
         }}/>
     </div>
   );
