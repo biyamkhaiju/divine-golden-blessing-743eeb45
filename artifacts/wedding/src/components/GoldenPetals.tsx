@@ -57,7 +57,7 @@ export function GoldenPetals() {
       style={{
         position: "fixed",
         inset: 0,
-        zIndex: 2,
+        zIndex: 25,
         pointerEvents: "none",
         overflow: "hidden",
       }}
