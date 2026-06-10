@@ -9,16 +9,16 @@ const TIMELINE = [
     img:"https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=800&q=82" },
   { year:"2021", np:"मित्रता",       en:"Friendship Blooms", icon:"🌸",
     desc:"Late-night calls, shared dreams, and long walks through Patan Durbar Square turned strangers into the best of friends. Every moment felt like home.",
-    img:"https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=800&q=82" },
+    img:"https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=800&q=82" },
   { year:"2023", np:"प्रेम",         en:"Love Declared",     icon:"❤",
     desc:"Under a canopy of marigolds at Pashupatinath, Aashish took Aayushi's hands and said what his heart had known all along. She said yes with tears of joy.",
-    img:"https://images.unsplash.com/photo-1606800052052-a08af7148866?w=800&q=82" },
+    img:"https://images.unsplash.com/photo-1583391099995-5b40bff7f2d2?w=800&q=82" },
   { year:"2025", np:"सगाई",          en:"Engagement",        icon:"💍",
     desc:"Surrounded by both families, rings were exchanged and a lifelong promise was made — to journey through life together, always.",
-    img:"https://images.unsplash.com/photo-1583391099995-5b40bff7f2d2?w=800&q=82" },
+    img:"https://images.unsplash.com/photo-1606800052052-a08af7148866?w=800&q=82" },
   { year:"Dec 2026", np:"शुभ विवाह", en:"Wedding Day",       icon:"🪔",
     desc:"On the auspicious twelfth of December, they take their seven sacred vows — Saptapadi — and begin their forever in the presence of God and loved ones.",
-    img:"https://images.unsplash.com/photo-1519741347686-c1e0aadf4611?w=800&q=82" },
+    img:"https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=800&q=82" },
 ];
 
 const MILESTONES = [

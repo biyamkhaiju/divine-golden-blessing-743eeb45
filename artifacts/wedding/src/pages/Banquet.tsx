@@ -10,11 +10,11 @@ const SCHEDULE = [
 ];
 
 const GALLERY = [
+  "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=700&q=82",
+  "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=700&q=82",
+  "https://images.unsplash.com/photo-1583391099995-5b40bff7f2d2?w=700&q=82",
   "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=700&q=82",
   "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=700&q=82",
-  "https://images.unsplash.com/photo-1583391099995-5b40bff7f2d2?w=700&q=82",
-  "https://images.unsplash.com/photo-1519741347686-c1e0aadf4611?w=700&q=82",
-  "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=700&q=82",
   "https://images.unsplash.com/photo-1606800052052-a08af7148866?w=700&q=82",
 ];
 
@@ -49,7 +49,7 @@ export default function Banquet() {
       {/* Fixed warm background */}
       <div className="fixed inset-0 -z-10" style={{ background:"#5B0F14" }}/>
       <div className="fixed inset-0 -z-10" style={{
-        backgroundImage:"url('https://images.unsplash.com/photo-1505236858219-8359eb29e329?w=1600&q=40')",
+        backgroundImage:"url('https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=1600&q=40')",
         backgroundSize:"cover", backgroundPosition:"center",
         filter:"blur(28px) brightness(0.28) saturate(1.3)",
         transform:"scale(1.08)",
@@ -66,10 +66,10 @@ export default function Banquet() {
 
       {/* ── CINEMATIC HERO ─────────────────────────────── */}
       <div className="relative h-[65vh] md:h-[82vh] w-full overflow-hidden">
-        <img src="https://images.unsplash.com/photo-1505236858219-8359eb29e329?w=1800&q=88"
+        <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=1800&q=88"
           alt="Himalaya Grand Banquet"
           className="absolute inset-0 w-full h-full object-cover"
-          style={{filter:"brightness(0.58) saturate(1.25)"}}/>
+          style={{filter:"brightness(0.52) saturate(1.35)"}}/>
         <div className="absolute inset-0" style={{
           background:"linear-gradient(to top, #3d0b10 0%, rgba(61,11,16,0.50) 48%, rgba(61,11,16,0.10) 100%)"
         }}/>
