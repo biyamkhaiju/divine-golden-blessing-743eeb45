@@ -3,20 +3,20 @@ import { Link } from "wouter";
 import { ScrollReveal } from "@/components/ScrollReveal";
 
 interface Photo { id:string; url:string; caption:string }
-const STORAGE_KEY_GROOM = "wedding_photos_groom";
-const STORAGE_KEY_BRIDE  = "wedding_photos_bride";
+const STORAGE_KEY_GROOM = "wedding_photos_groom_v2";
+const STORAGE_KEY_BRIDE  = "wedding_photos_bride_v2";
 
 const DEFAULT_GROOM: Photo[] = [
-  { id:"g1", url:"/indian-couple.png", caption:"Aashish" },
-  { id:"g2", url:"https://images.unsplash.com/photo-1606800052052-a08af7148866?w=600&q=82", caption:"Ceremony" },
-  { id:"g3", url:"https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=600&q=82", caption:"Reception" },
-  { id:"g4", url:"https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=600&q=82", caption:"Celebration" },
+  { id:"g1", url:"/groom.png", caption:"Aashish" },
+  { id:"g2", url:"/groom.png", caption:"The Groom" },
+  { id:"g3", url:"/groom.png", caption:"Sherwani" },
+  { id:"g4", url:"/groom.png", caption:"Ceremony" },
 ];
 const DEFAULT_BRIDE: Photo[] = [
-  { id:"b1", url:"/indian-couple.png", caption:"Aayushi" },
-  { id:"b2", url:"https://images.unsplash.com/photo-1583391099995-5b40bff7f2d2?w=600&q=82", caption:"Bridal look" },
-  { id:"b3", url:"https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=600&q=82", caption:"Floral decor" },
-  { id:"b4", url:"https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=600&q=82", caption:"Mehndi" },
+  { id:"b1", url:"/bride.png", caption:"Aayushi" },
+  { id:"b2", url:"/bride.png", caption:"The Bride" },
+  { id:"b3", url:"/bride.png", caption:"Bridal look" },
+  { id:"b4", url:"/bride.png", caption:"Lehenga" },
 ];
 
 function usePhotoStore(key:string, defaults:Photo[]) {

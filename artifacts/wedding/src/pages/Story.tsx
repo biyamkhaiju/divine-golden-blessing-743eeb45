@@ -30,14 +30,14 @@ const MILESTONES = [
 ];
 
 const PHOTOS_GROOM = [
-  "/indian-couple.png",
-  "https://images.unsplash.com/photo-1606800052052-a08af7148866?w=600&q=82",
-  "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=600&q=82",
+  "/groom.png",
+  "/groom.png",
+  "/groom.png",
 ];
 const PHOTOS_BRIDE = [
-  "/indian-couple.png",
-  "https://images.unsplash.com/photo-1583391099995-5b40bff7f2d2?w=600&q=82",
-  "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=600&q=82",
+  "/bride.png",
+  "/bride.png",
+  "/bride.png",
 ];
 
 /* ── helpers ────────────────────────────────────── */
