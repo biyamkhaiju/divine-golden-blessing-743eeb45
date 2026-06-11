@@ -1,23 +1,22 @@
 import React, { useState } from "react";
 import { Link } from "wouter";
 import { ScrollReveal } from "@/components/ScrollReveal";
-import { Lightbox } from "@/components/Lightbox";
 
 interface Photo { id:string; url:string; caption:string }
 const STORAGE_KEY_GROOM = "wedding_photos_groom";
 const STORAGE_KEY_BRIDE  = "wedding_photos_bride";
 
 const DEFAULT_GROOM: Photo[] = [
-  { id:"g1", url:"https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=600&q=82", caption:"Aashish" },
+  { id:"g1", url:"/indian-couple.png", caption:"Aashish" },
   { id:"g2", url:"https://images.unsplash.com/photo-1606800052052-a08af7148866?w=600&q=82", caption:"Ceremony" },
   { id:"g3", url:"https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=600&q=82", caption:"Reception" },
-  { id:"g4", url:"https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=82", caption:"Celebration" },
+  { id:"g4", url:"https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=600&q=82", caption:"Celebration" },
 ];
 const DEFAULT_BRIDE: Photo[] = [
-  { id:"b1", url:"https://images.unsplash.com/photo-1583391099995-5b40bff7f2d2?w=600&q=82", caption:"Aayushi" },
-  { id:"b2", url:"https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=600&q=82", caption:"Bridal flowers" },
-  { id:"b3", url:"https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=600&q=82", caption:"Mehndi" },
-  { id:"b4", url:"https://images.unsplash.com/photo-1550005809-91ad75fb315f?w=600&q=82", caption:"Reception" },
+  { id:"b1", url:"/indian-couple.png", caption:"Aayushi" },
+  { id:"b2", url:"https://images.unsplash.com/photo-1583391099995-5b40bff7f2d2?w=600&q=82", caption:"Bridal look" },
+  { id:"b3", url:"https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=600&q=82", caption:"Floral decor" },
+  { id:"b4", url:"https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=600&q=82", caption:"Mehndi" },
 ];
 
 function usePhotoStore(key:string, defaults:Photo[]) {
@@ -55,7 +54,7 @@ function AddPhotoForm({ onAdd }: { onAdd:(url:string,caption:string)=>void }) {
   );
 }
 
-function Gallery({ photos, onRemove, onOpen }: { photos:Photo[]; onRemove:(id:string)=>void; onOpen:(src:string)=>void }) {
+function Gallery({ photos, onRemove }: { photos:Photo[]; onRemove:(id:string)=>void }) {
   if(photos.length===0) return (
     <div className="text-center py-16 border border-dashed border-[#D4AF37]/18 rounded-2xl">
       <p className="font-cinzel text-[#D4AF37]/32 text-[9px] tracking-[0.3em] uppercase">No photos yet — add the first one</p>
@@ -65,9 +64,8 @@ function Gallery({ photos, onRemove, onOpen }: { photos:Photo[]; onRemove:(id:st
     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 md:gap-3">
       {photos.map((p,i)=>(
         <div key={p.id}
-          className={`group relative overflow-hidden rounded-xl border border-[#D4AF37]/12 hover:border-[#D4AF37]/40 transition-all duration-400 cursor-pointer
-            ${i===0?"col-span-2 row-span-2 aspect-square":"aspect-square"}`}
-          onClick={() => onOpen(p.url)}>
+          className={`group relative overflow-hidden rounded-xl border border-[#D4AF37]/12 hover:border-[#D4AF37]/40 transition-all duration-400
+            ${i===0?"col-span-2 row-span-2 aspect-square":"aspect-square"}`}>
           <img src={p.url} alt={p.caption||`Photo ${i+1}`}
             className="w-full h-full object-cover opacity-82 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"/>
           <div className="absolute inset-0 bg-gradient-to-t from-[#2e0909]/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"/>
@@ -111,7 +109,6 @@ function GaneshMandala({ opacity=0.08, size="140vmin", speed="cw-slow" }: { opac
 export default function Photos() {
   const groom = usePhotoStore(STORAGE_KEY_GROOM, DEFAULT_GROOM);
   const bride  = usePhotoStore(STORAGE_KEY_BRIDE,  DEFAULT_BRIDE);
-  const [lightbox, setLightbox] = useState<string|null>(null);
 
   return (
     <main className="min-h-screen w-full overflow-x-hidden text-[#FDFBF7] relative">
@@ -178,7 +175,7 @@ export default function Photos() {
             <AddPhotoForm onAdd={groom.add}/>
           </div>
           <div className="w-full h-px bg-gradient-to-r from-[#D4AF37]/28 via-[#D4AF37]/08 to-transparent"/>
-          <Gallery photos={groom.photos} onRemove={groom.remove} onOpen={setLightbox}/>
+          <Gallery photos={groom.photos} onRemove={groom.remove}/>
         </ScrollReveal>
 
         {/* Heart divider */}
@@ -201,7 +198,7 @@ export default function Photos() {
             <AddPhotoForm onAdd={bride.add}/>
           </div>
           <div className="w-full h-px bg-gradient-to-r from-[#D4AF37]/28 via-[#D4AF37]/08 to-transparent"/>
-          <Gallery photos={bride.photos} onRemove={bride.remove} onOpen={setLightbox}/>
+          <Gallery photos={bride.photos} onRemove={bride.remove}/>
         </ScrollReveal>
 
         {/* Footer nav */}
@@ -216,7 +213,6 @@ export default function Photos() {
           </div>
         </ScrollReveal>
       </div>
-      {lightbox && <Lightbox src={lightbox} onClose={() => setLightbox(null)}/>}
     </main>
   );
 }

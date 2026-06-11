@@ -12,8 +12,8 @@ const MILESTONES = [
   { year: "Dec 2026", np: "शुभ विवाह", en: "Wedding Day",   icon: "🪔", col: "from-yellow-900/28" },
 ];
 const CHAPTERS = [
-  { href:"/story",   np:"हाम्रो कहानी",     en:"Our Story",  sub:"From first glance to forever",     img:"https://images.unsplash.com/photo-1617339080583-89e6a0dd2523?w=900&q=80", icon:"✨" },
-  { href:"/photos",  np:"हाम्रा तस्बिरहरू", en:"Our Photos", sub:"Moments captured in gold",          img:"https://images.unsplash.com/photo-1583391099995-5b40bff7f2d2?w=900&q=80", icon:"📸" },
+  { href:"/story",   np:"हाम्रो कहानी",     en:"Our Story",  sub:"From first glance to forever",     img:"/indian-couple.png", icon:"✨" },
+  { href:"/photos",  np:"हाम्रा तस्बिरहरू", en:"Our Photos", sub:"Moments captured in gold",          img:"/indian-couple.png", icon:"📸" },
   { href:"/banquet", np:"समारोह स्थल",       en:"The Venue",  sub:"Himalaya Grand Banquet",           img:"https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=900&q=80", icon:"🏛" },
 ];
 const SCHEDULE = [
