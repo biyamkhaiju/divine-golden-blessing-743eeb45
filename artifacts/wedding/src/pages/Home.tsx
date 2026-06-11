@@ -12,9 +12,9 @@ const MILESTONES = [
   { year: "Dec 2026", np: "शुभ विवाह", en: "Wedding Day",   icon: "🪔", col: "from-yellow-900/28" },
 ];
 const CHAPTERS = [
-  { href:"/story",   np:"हाम्रो कहानी",     en:"Our Story",  sub:"From first glance to forever",     img:"https://images.unsplash.com/photo-1583391099995-5b40bff7f2d2?w=900&q=80", icon:"✨" },
+  { href:"/story",   np:"हाम्रो कहानी",     en:"Our Story",  sub:"From first glance to forever",     img:"https://images.unsplash.com/photo-1617339080583-89e6a0dd2523?w=900&q=80", icon:"✨" },
   { href:"/photos",  np:"हाम्रा तस्बिरहरू", en:"Our Photos", sub:"Moments captured in gold",          img:"https://images.unsplash.com/photo-1583391099995-5b40bff7f2d2?w=900&q=80", icon:"📸" },
-  { href:"/banquet", np:"समारोह स्थल",       en:"The Venue",  sub:"Himalaya Grand Banquet",           img:"https://images.unsplash.com/photo-1505236858219-8359eb29e329?w=900&q=80", icon:"🏛" },
+  { href:"/banquet", np:"समारोह स्थल",       en:"The Venue",  sub:"Himalaya Grand Banquet",           img:"https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=900&q=80", icon:"🏛" },
 ];
 const SCHEDULE = [
   { time:"11:00 AM", np:"मेहेन्दी र सङ्गीत", en:"Mehendi & Sangeet",      icon:"🌿" },
@@ -136,23 +136,19 @@ export default function Home() {
           <div className="hero-item w-full max-w-[140px] sm:max-w-[180px]"><Divider/></div>
         </div>
 
-        {/* Bottom content — names always close-below the couple image */}
+        {/* Bottom content — single-line names close-below couple image */}
         <div className="absolute inset-x-0 flex flex-col items-center gap-1.5 px-5 z-10 hero-stagger"
-          style={{top:"calc(50% + min(33vmin,205px))"}}>
-          <div className="text-center hero-item space-y-0.5">
-            <h1 className="font-yatra text-gold-gradient leading-none tracking-wide"
-              style={{fontSize:"clamp(1.8rem, 6.5vw, 5.0rem)"}}>
-              आशीष
+          style={{top:"calc(50% + min(27vmin,168px))"}}>
+          <div className="text-center hero-item">
+            <h1 className="font-yatra text-gold-gradient tracking-wide"
+              style={{fontSize:"clamp(1.5rem, 5.5vw, 4.5rem)", lineHeight:1.25}}>
+              आशीष <span style={{fontSize:"0.58em", color:"#d63652", filter:"drop-shadow(0 0 8px rgba(192,32,58,0.85))"}}>❤</span> आयुषी
             </h1>
-            <div className="flex items-center justify-center gap-2 sm:gap-3">
-              <div className="w-8 sm:w-14 h-px bg-gradient-to-r from-transparent to-[#C0203A]/55"/>
-              <span style={{fontSize:"clamp(1.1rem, 4vw, 2.0rem)", lineHeight:1, filter:"drop-shadow(0 0 8px rgba(192,32,58,0.80))"}}>❤</span>
-              <div className="w-8 sm:w-14 h-px bg-gradient-to-l from-transparent to-[#C0203A]/55"/>
+            <div className="flex items-center justify-center gap-3 mt-1.5">
+              <div className="w-10 sm:w-16 h-px bg-gradient-to-r from-transparent to-[#D4AF37]/38"/>
+              <span className="text-[#D4AF37]/48 text-[8px]">✦</span>
+              <div className="w-10 sm:w-16 h-px bg-gradient-to-l from-transparent to-[#D4AF37]/38"/>
             </div>
-            <h1 className="font-yatra text-gold-gradient leading-none tracking-wide"
-              style={{fontSize:"clamp(1.8rem, 6.5vw, 5.0rem)"}}>
-              आयुषी
-            </h1>
           </div>
           <p className="font-cinzel text-[#D4AF37]/68 tracking-[0.35em] uppercase text-[8px] sm:text-[9px] md:text-[10px] hero-item">Aashish &amp; Aayushi</p>
           <p className="font-cinzel text-[#D4AF37]/45 tracking-[0.25em] text-[7px] sm:text-[8px] md:text-[9px] hero-item">December 12, 2026 · Kathmandu, Nepal</p>
@@ -343,7 +339,7 @@ export default function Home() {
 
         {/* Cinematic venue hero */}
         <div className="relative h-[60vh] md:h-[78vh] w-full overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1505236858219-8359eb29e329?w=1800&q=88"
+          <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=1800&q=88"
             alt="Himalaya Grand Banquet"
             className="absolute inset-0 w-full h-full object-cover"
             style={{filter:"brightness(0.58) saturate(1.25)"}}/>
