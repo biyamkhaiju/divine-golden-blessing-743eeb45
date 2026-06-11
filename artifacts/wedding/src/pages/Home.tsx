@@ -12,7 +12,7 @@ const MILESTONES = [
   { year: "Dec 2026", np: "शुभ विवाह", en: "Wedding Day",   icon: "🪔", col: "from-yellow-900/28" },
 ];
 const CHAPTERS = [
-  { href:"/story",   np:"हाम्रो कहानी",     en:"Our Story",  sub:"From first glance to forever",     img:"https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=900&q=80", icon:"✨" },
+  { href:"/story",   np:"हाम्रो कहानी",     en:"Our Story",  sub:"From first glance to forever",     img:"https://images.unsplash.com/photo-1583391099995-5b40bff7f2d2?w=900&q=80", icon:"✨" },
   { href:"/photos",  np:"हाम्रा तस्बिरहरू", en:"Our Photos", sub:"Moments captured in gold",          img:"https://images.unsplash.com/photo-1583391099995-5b40bff7f2d2?w=900&q=80", icon:"📸" },
   { href:"/banquet", np:"समारोह स्थल",       en:"The Venue",  sub:"Himalaya Grand Banquet",           img:"https://images.unsplash.com/photo-1505236858219-8359eb29e329?w=900&q=80", icon:"🏛" },
 ];
@@ -118,46 +118,47 @@ export default function Home() {
             src="/shubha-vivah-couple.png"
             alt="Shubha Vivah"
             style={{
-              width:"min(48vmin,300px)",
-              filter:"drop-shadow(0 0 60px rgba(212,175,55,0.52)) drop-shadow(0 6px 36px rgba(0,0,0,0.58))",
+              width:"min(62vmin,360px)",
+              filter:"drop-shadow(0 0 60px rgba(212,175,55,0.54)) drop-shadow(0 6px 36px rgba(0,0,0,0.60))",
             }}
           />
         </div>
 
-        {/* Top content — Ganesh + mantra — pushed to upper 1/3 */}
-        <div className="absolute inset-x-0 top-0 flex flex-col items-center gap-3 px-5 pt-20 z-10 hero-stagger">
-          <div className="flex flex-col items-center gap-2 hero-item">
-            <img src="/ganesh.png" alt="Lord Ganesh" className="w-14 h-14 md:w-20 md:h-20 animate-shimmer animate-float"/>
-            <p className="font-yatra text-gold-gradient text-sm md:text-base tracking-widest">ॐ श्री गणेशाय नमः</p>
-            <p className="font-sans text-[#D4AF37]/62 text-sm italic max-w-xs leading-relaxed">
+        {/* Top content — Ganesh + mantra */}
+        <div className="absolute inset-x-0 top-0 flex flex-col items-center gap-2 px-5 pt-14 sm:pt-18 z-10 hero-stagger">
+          <div className="flex flex-col items-center gap-1.5 hero-item">
+            <img src="/ganesh.png" alt="Lord Ganesh" className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 animate-shimmer animate-float"/>
+            <p className="font-yatra text-gold-gradient text-xs sm:text-sm md:text-base tracking-widest">ॐ श्री गणेशाय नमः</p>
+            <p className="font-sans text-[#D4AF37]/58 text-xs sm:text-sm italic max-w-[260px] sm:max-w-xs leading-relaxed">
               वक्रतुंड महाकाय सूर्यकोटि समप्रभ। निर्विघ्नं कुरु मे देव।
             </p>
           </div>
-          <div className="hero-item w-full max-w-[180px]"><Divider/></div>
+          <div className="hero-item w-full max-w-[140px] sm:max-w-[180px]"><Divider/></div>
         </div>
 
-        {/* Bottom content — names + date + scroll — pushed to lower 1/3 */}
-        <div className="absolute inset-x-0 bottom-0 flex flex-col items-center gap-2 px-5 pb-10 z-10 hero-stagger">
-          <div className="text-center hero-item space-y-1">
+        {/* Bottom content — names always close-below the couple image */}
+        <div className="absolute inset-x-0 flex flex-col items-center gap-1.5 px-5 z-10 hero-stagger"
+          style={{top:"calc(50% + min(33vmin,205px))"}}>
+          <div className="text-center hero-item space-y-0.5">
             <h1 className="font-yatra text-gold-gradient leading-none tracking-wide"
-              style={{fontSize:"clamp(2.4rem, 8vw, 5.2rem)"}}>
+              style={{fontSize:"clamp(1.8rem, 6.5vw, 5.0rem)"}}>
               आशीष
             </h1>
-            <div className="flex items-center justify-center gap-3">
-              <div className="w-10 sm:w-16 h-px bg-gradient-to-r from-transparent to-[#C0203A]/55"/>
-              <span style={{fontSize:"clamp(1.3rem, 4.5vw, 2.2rem)", lineHeight:1, filter:"drop-shadow(0 0 8px rgba(192,32,58,0.80))"}}>❤</span>
-              <div className="w-10 sm:w-16 h-px bg-gradient-to-l from-transparent to-[#C0203A]/55"/>
+            <div className="flex items-center justify-center gap-2 sm:gap-3">
+              <div className="w-8 sm:w-14 h-px bg-gradient-to-r from-transparent to-[#C0203A]/55"/>
+              <span style={{fontSize:"clamp(1.1rem, 4vw, 2.0rem)", lineHeight:1, filter:"drop-shadow(0 0 8px rgba(192,32,58,0.80))"}}>❤</span>
+              <div className="w-8 sm:w-14 h-px bg-gradient-to-l from-transparent to-[#C0203A]/55"/>
             </div>
             <h1 className="font-yatra text-gold-gradient leading-none tracking-wide"
-              style={{fontSize:"clamp(2.4rem, 8vw, 5.2rem)"}}>
+              style={{fontSize:"clamp(1.8rem, 6.5vw, 5.0rem)"}}>
               आयुषी
             </h1>
           </div>
-          <p className="font-cinzel text-[#D4AF37]/68 tracking-[0.38em] uppercase text-[9px] md:text-[10px] hero-item">Aashish &amp; Aayushi</p>
-          <p className="font-cinzel text-[#D4AF37]/45 tracking-[0.28em] text-[8px] md:text-[9px] hero-item">December 12, 2026 · Kathmandu, Nepal</p>
-          <div className="flex flex-col items-center gap-2 opacity-50 pt-1 hero-item">
-            <p className="font-cinzel text-[#D4AF37] text-[8px] tracking-[0.55em] uppercase">Scroll to explore</p>
-            <div className="w-5 h-8 rounded-full border border-[#D4AF37]/42 flex items-start justify-center pt-1.5">
+          <p className="font-cinzel text-[#D4AF37]/68 tracking-[0.35em] uppercase text-[8px] sm:text-[9px] md:text-[10px] hero-item">Aashish &amp; Aayushi</p>
+          <p className="font-cinzel text-[#D4AF37]/45 tracking-[0.25em] text-[7px] sm:text-[8px] md:text-[9px] hero-item">December 12, 2026 · Kathmandu, Nepal</p>
+          <div className="flex flex-col items-center gap-1.5 opacity-45 pt-1 hero-item">
+            <p className="font-cinzel text-[#D4AF37] text-[7px] sm:text-[8px] tracking-[0.5em] uppercase">Scroll to explore</p>
+            <div className="w-4 h-7 rounded-full border border-[#D4AF37]/42 flex items-start justify-center pt-1">
               <div className="w-1 h-1.5 rounded-full bg-[#D4AF37]/80 animate-scroll-dot"/>
             </div>
           </div>

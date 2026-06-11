@@ -13,7 +13,7 @@ const GALLERY = [
   "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=700&q=82",
   "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=700&q=82",
   "https://images.unsplash.com/photo-1583391099995-5b40bff7f2d2?w=700&q=82",
-  "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=700&q=82",
+  "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=700&q=82",
   "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=700&q=82",
   "https://images.unsplash.com/photo-1606800052052-a08af7148866?w=700&q=82",
 ];

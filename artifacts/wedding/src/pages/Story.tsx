@@ -6,7 +6,7 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 const TIMELINE = [
   { year:"2020", np:"पहिलो भेट",    en:"First Meeting",     icon:"✨",
     desc:"Two souls crossed paths at a family gathering in Kathmandu — a fleeting glance that neither could forget. The world grew a little more beautiful that day.",
-    img:"https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=800&q=82" },
+    img:"https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=800&q=82" },
   { year:"2021", np:"मित्रता",       en:"Friendship Blooms", icon:"🌸",
     desc:"Late-night calls, shared dreams, and long walks through Patan Durbar Square turned strangers into the best of friends. Every moment felt like home.",
     img:"https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=800&q=82" },
@@ -30,7 +30,7 @@ const MILESTONES = [
 ];
 
 const PHOTOS_GROOM = [
-  "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=600&q=82",
+  "https://images.unsplash.com/photo-1606800052052-a08af7148866?w=600&q=82",
   "https://images.unsplash.com/photo-1519741347686-c1e0aadf4611?w=600&q=82",
   "https://images.unsplash.com/photo-1606800052052-a08af7148866?w=600&q=82",
 ];
@@ -73,7 +73,7 @@ export default function Story() {
       {/* Fixed warm background */}
       <div className="fixed inset-0 -z-10" style={{ background:"#5B0F14" }}/>
       <div className="fixed inset-0 -z-10" style={{
-        backgroundImage:"url('https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=1600&q=40')",
+        backgroundImage:"url('https://images.unsplash.com/photo-1583391099995-5b40bff7f2d2?w=1600&q=40')",
         backgroundSize:"cover", backgroundPosition:"center",
         filter:"blur(28px) brightness(0.28) saturate(1.5)",
         transform:"scale(1.08)",
